@@ -1,0 +1,13 @@
+{
+  "name": "clienthouse",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "sass": "sass ./style/main.scss:./style/main.css -w --style compressed",
+    "prefix": "postcss ./style/main.css --use autoprefixer -d ./public/css/prefixed/"
+  },
+  "author": "",
+  "license": "ISC",
+  "browsersList": "last 4 versions"
+}

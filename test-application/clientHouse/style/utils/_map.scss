@@ -1,0 +1,13 @@
+// Breakpoints mobile first
+
+// Breakpoints
+$breakpoints: (
+  mobile-small: 320px,
+  mobile-large: 480px,
+  tablet-small: 768px,
+  tablet-large: 1024px,
+  laptop-small: 1280px,
+  laptop-large: 1440px,
+  desktop-small: 1600px,
+  desktop-large: 1920px,
+);

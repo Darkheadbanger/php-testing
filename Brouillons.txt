@@ -1,0 +1,142 @@
+    Question 1.
+    // Durée 30 minutes
+    // $fizzBuzz = '';
+    // $stringFizzBuzz = (int)$fizzBuzz;
+
+    // $arrayFizzBuzzFinal = [];
+    // $arrayFizzBuzz = [$stringFizzBuzz];
+    // $arrayFizzBuzz = (array)$num;
+
+    // Multiplication ne fonctionne pas, je peux pas multiplier a chaque fois par 3
+    // Je pense qu'il faut utiliser modulo pour les nombres divisable par 3 et on le change avec string "fizz" pareil
+    // pour le 5 avec buzz Comme ca, chaque nombre divisable par 3 fera "fizz" donc 3, 6, 9 etc. Le même pricnipe pour 5
+    Pour que cela fonctionne, je dois mettre 100 dabs le paramètre de test fizzbuzz
+    Question 2:
+
+    Je fais énormement de fautes, j'ai du regarder les règles de chiffres romains
+    et comment le traduire avec le pseudeocode.
+
+    D'abord, je fais directement avec switch dans la boucle for mais j'ai très vite comprendre
+    que c'est plus complexe que cela. Ensuite, j'ai essayé une autre approche donc je crée deux variables
+    qui contien de tableau le chiffre romains et le chiffre arabes mais uniquement 1000, 500, 100, 50, 10, 5, 1
+    y compris le chiffre romains 'M', 'D', 'C', 'L', 'X', 'V', 'I'. J'ai réussit 
+    à traduire le chiffre arabes en chiffre romains mais pas tout, c'est à dire que si c'est 4 
+    il me retourne "IIII" ce qui n'est pas bon car il y a une règle de ne pas répéter le ême chiffre plsu de 3 fois
+    Cette réusite partielle m'as  pris une heure environ. Ensuite, j'essaie de réflechir et je n'arrive pas à comprendre
+    Je suis allée sur les cours d'Openclassroom et j'ai vu une video pour faire le même exercice
+    J'ai regardé jusqu'à la limite de ce que je fais et je vois de nouveauté donc il faut faire     $romanNumeral = ['M', 'CM', 'D', 'CD', 'C', 'XC', 'L', 'XL', 'X', 'IX', 'V', 'IV', 'I'];
+    $decimal = [1000, 900, 500, 400, 100, 90, 50, 40, 10, 9, 5, 4, 1]; et j'ai arrêté la video
+    J'ai réflechi comment il faut faire pour effacer la répétition après plus de 3 chiffres romains
+    j'ai essayé plusieurs fois pendant plus de 30 minutes dnc de mettre la variable $count++ a la fin de boucle while
+    pour conter jusqu'à 4, ensuite j'ai utilisé le script while et dans la case 4, j'utilise
+    substr($result, 0, -3) pour effacer les repetitions de 3 derniers même chiffre romains,
+    ensuite je fais $numeralRoman[$i - 1]; et je le mets sur $résult final, ca fonctionne partielement
+    car toutes les chiffres arabes ne se traduisent pas bien, cela m'as pris 30 minutes.
+    Ensuite, je regarde de tuto pour me donner une idée,  https://www.youtube.com/watch?v=z1L5mdQsi-c
+    Il ne fait pas la même manière. J'ai réfléchi encore car ma solution est differents que sa solution
+    Ensuite, j'ai effacé le switch et je remets while normal donc concataner le result et soustraire le reste de nombre après
+    le modulo avec decimal = [1000, 900, 500, 400, 100, 90, 50, 40, 10, 9, 5, 4, 1]; et $romanNumeral = ['M', 'CM', 'D', 'CD', 'C', 'XC', 'L', 'XL', 'X', 'IX', 'V', 'IV', 'I'];
+    et cela fonctionne très bien.
+
+    3. Je crée un tableau associatif pour le rot13 ensuite j'utilise for pour iterer ce tableau mais je comprends que le for ne fonctionne pas avec un tableau associatif
+    j'utilise foreach
+    Avec for:
+           // for ($i = 0; $i < count($rot13_dict); $i++) {
+        //     while ($alphabet === $rot13_dict[$i]) {
+        //         $rot13 = $rot13_dict[$i];
+        //     }
+        // }
+
+    Ensuite, j'essaie de faire cette manière mais cela fonctionne qu'avec une seule string
+            // Write your code!
+        foreach ($rot13_dict as $key => $value) {
+            if ($alphabet === $key) {
+                $rot13 = $value;
+            }
+        }
+
+        return $rot13;
+
+        3. Tout d'abord, j'ai essayé de créer une expression régulière pour trouver le nombre "2019" en utilisant "/[2019]/" avec les options "i" et "g". Ensuite, j'ai parcouru le texte en utilisant une boucle for avec strlen. Mon objectif était de trouver le nombre "2019" dans le texte et de l'assigner à la variable $year (initialement vide). Cependant, cela renvoyait tous les chiffres contenant "2019", me donnant "212019" comme résultat.
+
+Après avoir réfléchi pendant près d'une heure et consulté des forums, j'ai découvert comment utiliser les expressions régulières en PHP et les méthodes pour faire correspondre l'expression "2019" à l'année 2019 dans la variable $text. J'ai essayé plusieurs approches, mais aucune ne fonctionnait.
+
+Enfin, j'ai trouvé une explication sur W3Schools concernant l'utilisation de preg_match, qui nécessite trois arguments : preg_match(pattern, input, matches). La variable $matches est un tableau qui est rempli avec les chaînes correspondant au motif de l'expression régulière. Pour récupérer la première chaîne du tableau $matches, il faut utiliser $matches[1].
+
+Cependant, mon expression régulière $regex n'était toujours pas correcte. Après avoir relu des ressources sur les expressions régulières et consulté Stack Overflow, j'ai appris que \d peut être utilisé pour rechercher un chiffre et {2} pour récupérer les deux premiers chiffres. J'ai donc modifié mon expression régulière en "/(20)\d{2}/" pour capturer l'année qui commence par "20". Cette solution fonctionne car il n'y a qu'une seule occurrence d'une chaîne commençant par "20" dans le texte, soit "2019".
+
+Temps total : 1h40
+
+4. Honnêtement je ne comprends pas ce qu'il faut faire, j'ai regardé ce que c'est getMockBuilder() et je comprends c'est pour "mocké" ou simmuler 
+le comportement d'une fonctione qui n'existe pas encore réelement pour que cette fonction passe dans le test PHPUnit.
+j'ai vu un tuto sur le test "mock" sur YouTube https://www.youtube.com/watch?v=rRVoLwZ1tnk mais pour l'instant c'est encore brouillons dans ma tête
+j'ai réussit à enlever des erreurs car "::CLASS" est souligné en rouge, je l'ai changé en "::class" et plus d'erreurs.
+Ensuite, j'ai relu ce que je dois faire, et il faut tout simplement améliorer le code dans la function simplifyMe(), j'ai tout simplement ajouter
+ : void car il ne retourne rien, j'ai ajouté aussi : void dans la function doSomething(). Ensuite, j'ai relu attentivement le test technique et j'ai remarqué qu'il y a 
+ ceratins difference dans expect les trois tests attendent que le test doSomething se fasse une seule fois (once()) et il y en a un dans le tests 3 ou c'est marqué             ->expects($this->never())
+alors, je comprends que pour améliorer le code, il faut juste que je joue avec la condition. J'ai ensuite tout simplement réduire la condition:
+si la condition est differents de string vide ('') et 1 alors on retourne la function doSomething() car je comprends que "" et 1 se trouve dans             ->expects($this->never())
+de test 3. Malheruesement, dans le tests $mock->simplifyMe('', 2), la function simplifyMe est souligné rouge, j'ai cherché partout et j'ai tout fait 
+mais je n'arrive pas à resoudre ce problème. Mais, même avec cela le test ne passe pas, je pense qu'en utilisant un && logique, cela va arrêter au test 3.
+J'ai donc juste essayé avec le OU Logique || if ($report !== '' || $rc !== 1) $this->doSomething(); et cela fonctionne. Peut être parce que le test continue jusqu'à qu'il trouve 
+le string vide OU le 1 trouve le never() mais ne s'arrête pas au never et continue jusqu'à test 4., honnêtement, je suis un peu perdu mais cela fonctionne.
+La durée entre de comprendre ce que c'est le MOCK en suivant le tuto et trouvé la logique de la condition (car j'ai pensé qu'il fallait améliorer la function doSomething et simplifyMe) est de 1h30
+
+5. J'ai un peu oublié comment fonctionne la factorielle, alors je regarde d'abord cette vidéo explicative : https://www.youtube.com/watch?v=n7dEjXQhNss. Je me souviens maintenant du fonctionnement
+des factorielles et j'ai déjà travaillé sur la récursivité avec JavaScript sur FreeCodeCamp, donc cela devrait aller vite. Je comprends comment fonctionne la récursivité sur FreeCodeCamp, 
+donc j'ai pu résoudre cette question en moins de 10 minutes.
+
+La récursivité consiste à utiliser la fonction à l'intérieur d'elle-même. En gros, self::factorial($number - 1) va simplement prendre le nombre actuel, par exemple 5, et le multiplier par 4 (car $number - 1), 
+puis la fonction se répète jusqu'au plus petit nombre. C'est pour cela que j'ai ajouté une condition : si $number est égal à 1, on retourne 1, qui est le plus petit nombre possible.
+
+6. Pendant une heure, je suis en difficulté pour imaginer et trouver la solution, voici la première fois que j'essaie de trouver sans succes
+1.er tentative 
+    public static function clockAngle(int $hours, int $minutes): int
+    {
+        $angle = 0;
+        // Pourquoi 30 partout, car dans une heure il y a  degrés et c'est pour ca je ne fais pas
+        // 1=>30, 2=>60 etc
+        $petiteAiguilleHeure = [
+            1 => 30,
+        ];
+        $grandeAiguilleMinutes = [
+            1 => 6,
+        ];
+        // Write your code!
+        // Rendre 40 à 0.40. 40/100
+        foreach ($petiteAiguilleHeure as $petiteAigKey => $petiteAigValue) {
+            foreach ($grandeAiguilleMinutes as $grandeAigKey => $grandeAigValue) {
+                $petiteHeure = $hours * $petiteAigValue;
+                $grandeMinutes = $minutes * $grandeAigValue;
+                // $grandeMinutes = $minutes * $grandeAigValue;
+                $angle = $grandeMinutes - $petiteHeure;
+            }
+        };
+
+        return $angle;
+    }
+
+    Pour la dernière question, le 6 je suis bloqué et je n'arrive pas à le trouver moi même, ême avec stackoverflow 
+    Voici la solution trouvé sur internet.
+
+    function clockAngle(int $hours, int $minutes): float
+{
+    // Étape 1: Calculer la position de la petite aiguille (heure) en degrés par rapport à 12 heures
+    $hoursInDegrees = ($hours % 12) * 30; // modulo 12 pour gérer les heures supérieures à 12
+    // Ajouter la contribution des minutes
+    $hoursInDegrees += $minutes * 0.5;
+
+    // Étape 2: Calculer la position de la grande aiguille (minute) en degrés par rapport à 12 heures
+    $minutesInDegrees = $minutes * 6;
+
+    // Étape 3: Calculer la différence absolue entre les deux angles
+    $angleDifference = abs($hoursInDegrees - $minutesInDegrees);
+
+    // Étape 4: Si la différence d'angle est supérieure à 180 degrés, soustrayez-la de 360 degrés
+    if ($angleDifference > 180) {
+        $angleDifference = 360 - $angleDifference;
+    }
+
+    // Étape 5: Retourner l'angle calculé en degrés
+    return $angleDifference;
+}

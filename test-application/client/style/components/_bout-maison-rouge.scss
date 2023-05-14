@@ -1,0 +1,13 @@
+.button-maison-couleur {
+  display: none;
+  @include bouton(
+    $button-bg-color-generate,
+    $button-hover-bg-color-generate,
+    $button-shadow-generate,
+    $button-shadow-generate-hover // Utilisez la variable shadow rouge
+  );
+  margin: $button-color-margin;
+  &__btn {
+    @extend %button;
+  }
+}

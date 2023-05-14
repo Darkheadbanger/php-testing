@@ -1,0 +1,38 @@
+.maison-container {
+  display: flex;
+  margin: $maison-generer-margin;
+  background-color: yellow;
+  width: 100%;
+  height: 50vh;
+  .maison-premier {
+    margin: $maison-generer-margin;
+    &:hover {
+      opacity: 0.8;
+    }
+    .maison-premier-toit {
+      @include toit-triangle($first-maison-color-background, $border-toit);
+    }
+    .maison-premier-mur {
+      @include maison-mur($first-maison-color-background);
+      position: relative;
+    }
+    &--disabled {
+      display: block;
+    }
+  }
+  .maison-second {
+    &:hover {
+      opacity: 0.8;
+    }
+    margin: $maison-generer-margin;
+    .maison-second-mur {
+      @include maison-mur($second-maison-color-background);
+    }
+    .maison-second-toit {
+      @include toit-triangle($second-maison-color-background, $border-toit);
+    }
+    &--disabled {
+      display: block;
+    }
+  }
+}

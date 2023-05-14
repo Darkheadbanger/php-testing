@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <!-- ... -->
+  </head>
+  <body>
+    <div class="form-container">
+      <form class="form-maison" id="form" method="post">
+        <label class="form-maison__label" for="maison-bleu">Maison bleu:</label>
+        <input
+          class="form-maison__input"
+          type="number"
+          id="maison-bleu"
+          name="maison-bleu"
+          placeholder="Entrez le nombre de la maison bleu"
+          min="0"
+          required
+        />
+        <label class="form-maison__label" for="maison-verte"
+          >Maison verte:</label
+        >
+        <input
+          class="form-maison__input"
+          type="number"
+          id="maison-verte"
+          name="maison-verte"
+          placeholder="Entrez le nombre de la maison verte"
+          min="0"
+          required
+        />
+        <div class="bouton-generated-maison">
+          <button class="bouton-generated-maison__btn" type="submit">
+            Soumettre la maison
+          </button>
+        </div>
+      </form>
+      <div class="maison-container">
+        <div class="maison-premier maison-premier--disabled">
+          <div
+            class="maison-premier-toit maison-premier-toit--red-enabled maison-premier-toit--red-disabled"
+          ></div>
+          <div
+            class="maison-premier__fenetre maison-premier__fenetre--red-enabled maison-premier__fenetre--red-disabled"
+          ></div>
+          <div
+            class="maison-premier-mur maison-premier-mur--color-enabled maison-premier-mur--color-disabled"
+          ></div>
+          <div class="maison-premier__porte"></div>
+        </div>
+        <!-- ici bleu -->
+        <div class="maison-second maison-second--disabled">
+          <div
+            class="maison-second-toit maison-second-toit--color-enabled maison-second-toit--color-disabled"
+          ></div>
+          <div
+            class="maison-second__fenetre maison-second__fenetre--color-enabled maison-second__fenetre--color-disabled"
+          ></div>
+          <div class="maison-second-mur maison-second-mur--color-enabled"></div>
+          <div class="maison-second__porte"></div>
+        </div>
+      </div>
+
+      <div class="button-maison-couleur">
+        <button id="red-btn" class="button-maison-couleur__btn" type="submit">
+          Rendre la maison rouge
+        </button>
+      </div>
+    </div>
+    <script defer src="./src/index.js"></script>
+  <script defer src="main.js"></script></body>
+</html>

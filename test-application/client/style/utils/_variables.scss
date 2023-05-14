@@ -1,0 +1,30 @@
+// base
+$body-bg: #f6f6f6;
+$font-stack: "Roboto", sans-serif;
+// formulaire
+$input-border-radius: 8px;
+$input-padding: 0.7rem;
+$input-border: 1px solid #ccc;
+$button-bg-color-submit: #3498db;
+$button-hover-bg-color-submit: #2980b9;
+$button-color: #fff;
+$button-margin: 0 -1.6rem 0 0;
+
+$button-shadow-form: 10px 5px 5px #3498dbe3;
+$button-shadow-hover: 10px 5px 5px #297fb9d8;
+
+// Independent generate button
+$button-bg-color-generate: rgb(240, 65, 65);
+$button-hover-bg-color-generate: red;
+$button-color-margin: 3em 0em 0em 0em;
+
+$button-shadow-generate: 10px 5px 5px rgba(240, 65, 65, 0.788);
+$button-shadow-generate-hover: 10px 5px 5px rgba(255, 0, 0, 0.795);
+
+// Masion generer
+$maison-generer-margin: 2em 0em 0em 7.5em;
+// Maison mur et toit
+$first-maison-color-background: blue;
+$second-maison-color-background: green;
+$border-maison: 5px solid blue;
+$border-toit: 70px solid rgba(0, 0, 0, 0);

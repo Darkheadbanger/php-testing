@@ -1,0 +1,56 @@
+// J'utilise mixins pour rendre le scss plus modulaires en mettant par exemple un argument
+// de couleur pour que ce mixins puissent appellé la couleur de chaque bouton
+@mixin bouton(
+  $bg-color,
+  $bg-color-hover,
+  $shadow-button,
+  $shadow-button-hover
+) {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  // J'utilise un placeholder(%) pour éviter que le bouton soit generer s'il n'est pas utilisé avec "extend"
+  // Cela va éviter d'inclure le bouton s'il n'est pas utilisé
+  %button {
+    background-color: $bg-color;
+    border: none;
+    color: $button-color;
+    text-decoration: none;
+    font-size: 16px;
+    border-radius: $input-border-radius;
+    padding: $input-padding;
+    box-shadow: $shadow-button;
+    transition: box-shadow 0.2s ease-out;
+    &:hover {
+      background-color: $bg-color-hover;
+      box-shadow: $shadow-button-hover;
+    }
+    &:active {
+      top: 10px;
+      box-shadow: none;
+      transition: box-shadow 0.2s ease-in;
+    }
+  }
+}
+
+// Maison
+// Maison toit
+@mixin toit-triangle($background-color, $border-toit) {
+  width: 0;
+  height: 0;
+  border-left: $border-toit;
+  border-right: $border-toit;
+  border-bottom: 100px solid $background-color;
+  position: relative;
+  left: -8px; // Pour déplacer le triangle 10px vers la gauche
+}
+
+// Maison mur
+@mixin maison-mur($background-color) {
+  position: relative;
+  width: 10vh;
+  height: 10vh;
+  background-color: $background-color;
+  border-top: 2px solid black;
+  z-index: 2; // Changez cette valeur à 2
+}
